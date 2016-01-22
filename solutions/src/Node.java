@@ -44,9 +44,22 @@ public class Node
                 current._next = null;
                 return current;
             }
+            previousNode = current;
             current = current._next;
         }
         return null;
+    }
+    @Override
+    public String toString()
+    {
+        Node current = this;
+        StringBuffer retString = new StringBuffer();
+        while(current._next != null)
+        {
+            retString.append(current.data + " -> ");
+            current = current._next;
+        }
+        return retString.toString();
     }
 
 

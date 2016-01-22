@@ -21,12 +21,19 @@ public class Main {
         out.println(output);
 
         Node first = new Node(1);
+        out.println(first.toString());
         first.appendTo(new Node(100)).appendTo(new Node(250))
                 .appendTo(new Node(150)).appendTo(new Node(175))
                 .appendTo(new Node(230)).appendTo(new Node(200));
-
-
-
+        out.println(first.toString());
+        first.deleteLast();
+        out.println(first.toString());
+        first.deleteByElement(250);
+        out.println(first.toString());
+        first.deleteByElement(20);
+        out.println(first.toString());
+        first.deleteByElement(1);
+        out.println(first.toString());
 
 
     }
