@@ -1,7 +1,7 @@
 public class Node
 {
     public Node _next;
-    private int data;
+    public int data;
     public Node(int d)
     {
         data = d;

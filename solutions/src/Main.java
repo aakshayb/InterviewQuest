@@ -12,10 +12,6 @@ public class Main {
         out.println(two.recursiveReverse(testInput1));
         out.println(two.swapReverse(testInput1));
 
-        StringMatcher sm = new StringMatcher();
-        out.println(sm.match(testInput1, "Akshay"));
-        out.println(sm.match("work", testInput1));
-
         InversionCounter ic = new InversionCounter();
         int output = ic.getInversionCount(ic.FileReader("/Users/spiff/InterviewQuest/Cracking_the_coding_interview/Cracking_the_coding_interview/input.txt"));
         out.println(output);
@@ -35,6 +31,37 @@ public class Main {
         first.deleteByElement(1);
         out.println(first.toString());
 
+        Node firstElement = new Node(10);
+        LinkedList linkedList = new LinkedList(firstElement);
+        Node abc = new Node(200);
+        linkedList.append(abc).append(new Node(250))
+                .append(new Node(140)).append(new Node(90));
+        out.println(linkedList);
+        linkedList.deleteLast();
+        out.println(linkedList);
+        linkedList.deleteElement(abc);
+        out.println(linkedList);
+        linkedList.deleteElement(firstElement);
+        out.println(linkedList);
 
+        String oneStr = "Command";
+        String twoStr = "and";
+        out.println(" Result is : " + new StringMatcher().match(oneStr, twoStr));
+        out.println(" Result is : " + new StringMatcher().match(testInput1, "Akshay"));
+        out.println(" Result is : " + new StringMatcher().match(testInput1, "Shalini"));
+
+        Integer[] ints = new Integer[]{1, 8, 4, 7, 2, 0};
+        out.println("Unsorted array -> "+ toString(ints) + "Sorted array -> " + toString(new Sorter().BubbleSort(ints)));
+
+
+    }
+    private static String toString(Integer[] array)
+    {
+        StringBuffer  sb = new StringBuffer();
+        for(int i=0; i < array.length; i++)
+        {
+            sb.append(array[i] + ", ");
+        }
+        return sb.toString();
     }
 }

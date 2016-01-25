@@ -38,10 +38,28 @@ public class LinkedList
         {
             if(current == element)
             {
+                if(current == head)
+                {
+                    head = current._next;
+                    return;
+                }
                 previousNode._next = current._next;
             }
             previousNode = current;
             current = current._next;
         }
+    }
+    @Override
+    public String toString()
+    {
+        Node current = head;
+        StringBuffer buffer = new StringBuffer();
+        while(current._next != null)
+        {
+            buffer.append(current.data + " -> ");
+            current = current._next;
+        }
+        buffer.append(tail.data);
+        return buffer.toString();
     }
 }
