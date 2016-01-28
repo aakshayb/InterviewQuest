@@ -3,7 +3,7 @@
  */
 public class Sorter
 {
-    public Integer[] BubbleSort(Integer[] array)
+    public Integer[] Sort(Integer[] array)
     {
         for(int i = 0; i < array.length - 1 ; i++)
         {
@@ -11,9 +11,25 @@ public class Sorter
             {
                 if(array[i] > array[j])
                 {
-                    Integer temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
+                    array[i] = array[i] ^ array[j];
+                    array[j] = array[j] ^ array[i];
+                    array[i] = array[i] ^ array[j];
+                }
+            }
+        }
+        return array;
+    }
+    public Integer[] BubbleSort(Integer[] array)
+    {
+        for(int i=1; i< array.length ; i++)
+        {
+            for(int j=0; j< array.length - i; j++)
+            {
+                if(array[j] > array [j+1])
+                {
+                    array[j] = array[j] ^ array[j+1];
+                    array[j+1] = array[j+1] ^ array[j];
+                    array[j] = array[j] ^ array[j+1];
                 }
             }
         }

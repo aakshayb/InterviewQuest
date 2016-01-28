@@ -51,9 +51,19 @@ public class Main {
         out.println(" Result is : " + new StringMatcher().match(testInput1, "Shalini"));
 
         Integer[] ints = new Integer[]{1, 8, 4, 7, 2, 0};
+        out.println("Unsorted array -> "+ toString(ints) + "Sorted array -> " + toString(new Sorter().Sort(ints)));
+        ints = new Integer[]{1, 8, 4, 7, 2, 0};
         out.println("Unsorted array -> "+ toString(ints) + "Sorted array -> " + toString(new Sorter().BubbleSort(ints)));
 
+        PalindromeChecker checker = new PalindromeChecker();
+        out.println("Akshay is a palindrome? " + checker.check("Akshay"));
+        out.println("Is it? " + checker.check("Detartrated"));
+        out.println("Is it? "+ checker.check("Detartrated"));
 
+        BaseConverter converter = new BaseConverter();
+        out.println("Convert 52220 to binary is : " + converter.convert(52220,2));
+        out.println("Convert 52220 to hexa is : " + converter.convert(52220,16));
+        out.println("Convert 52220 to octa is : " + converter.convert(52220,8));
     }
     private static String toString(Integer[] array)
     {
